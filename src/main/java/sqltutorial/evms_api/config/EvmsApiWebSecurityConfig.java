@@ -30,7 +30,7 @@ public class EvmsApiWebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 		.authorizeRequests()
 		.antMatchers("/api/evms/vaccine_types").hasAnyRole("ADMIN", "USER")
-		.antMatchers("/api/evms/vaccine_types/add", "/api/evms/vaccine_types/edit", "/api/evms/vaccine_types/delete**").hasRole("ADMIN")
+		.antMatchers("/api/evms/vaccine_types/add", "/api/evms/vaccine_types/edit", "/api/evms/vaccine_types/delete/*").hasRole("ADMIN")
 		.and().httpBasic();
    }
 	
